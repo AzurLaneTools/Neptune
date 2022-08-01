@@ -16,7 +16,7 @@ func main() {
 	neptune.InitDefaultTargets()
 	neptune.DEBUG = false
 	// cost-Coins,cost-Cube,gain-BP-SSR,gain-BP-UR,gain-EquipBP-UR,gain-CognitiveChips
-	weights := []float64{-0.0001, -0.6 * 3, 1.6, 3.0, 36 * 4, 0.00001}
+	weights := []float64{-0.0001, -3.0, 1.6, 4.0, 150.0, 0.00001}
 	// weights := []float64{-0.001, 0, 1, 1, 365 * 4, 0.01}
 	ctx := neptune.NewResearchContext(10000, &neptune.SkipNight{}, weights)
 
