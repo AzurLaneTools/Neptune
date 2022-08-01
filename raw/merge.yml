@@ -1,0 +1,112 @@
+projectMap:
+  B-128-MI: B4E
+  B-164-MI: B4E
+  B-235-MI: B4E
+  B-268-MI: B4E
+  B-351-RF: B4
+  B-397-RF: B4
+  B-622-MI: B4
+  B-636-MI: B4
+  B-654-MI: B4
+  B-682-MI: B4
+  C-153-MI: C6
+  C-185-MI: C8
+  C-038-RF: C12
+  D-008-UL: D05
+  D-063-UL: D05U
+  D-068-UL: D05
+  D-075-UL: D05U
+  D-075-ULI: D05U
+  D-082-UL: D05
+  D-708-MI: D25
+  D-763-MI: D25U
+  D-768-MI: D25
+  D-775-MI: D25U
+  D-782-MI: D25
+  D-308-MI: D5
+  D-363-MI: D5U
+  D-368-MI: D5
+  D-375-MI: D5U
+  D-382-MI: D5
+  D-408-RF: D8
+  D-463-RF: D8U
+  D-468-RF: D8
+  D-475-RF: D8U
+  D-482-RF: D8
+  E-031-MI: E2
+  E-315-MI: E2E
+  G-412-MI: G15
+  G-236-MI: G25
+  G-531-MI: G4
+  H-063-UL: H05
+  H-387-MI: H1
+  H-339-MI: H2
+  H-207-RF: H4
+  Q-002-UL: Q05
+  Q-010-UL: Q05
+  Q-051-UL: Q05
+  Q-068-UL: Q05
+  Q-089-UL: Q05
+  Q-302-MI: Q1
+  Q-310-MI: Q1
+  Q-351-MI: Q1
+  Q-368-MI: Q1
+  Q-389-MI: Q1
+  Q-202-MI: Q2
+  Q-210-MI: Q2
+  Q-251-MI: Q2
+  Q-268-MI: Q2
+  Q-289-MI: Q2
+  Q-002-MI: Q4
+  Q-010-MI: Q4
+  Q-051-MI: Q4
+  Q-068-MI: Q4
+  Q-089-MI: Q4
+  T-018-MI: T3
+  T-384-MI: T4
+  T-249-MI: T6
+# 所有可能的时间. 将生成对应关系: {str(duration).replace('.', ''): duration}
+durations: [0.5, 1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 12]
+merge:
+  - name: research4_blueprints
+    item_map:
+      BlueprintS4DR: BP-UR
+      BlueprintS4PRY: BP-SSR
+  - name: research4_equipments
+    item_map:
+      EquipmentUltrarare: EquipBP-UR
+  - name: research4_others
+    item_map:
+      CognitiveChips: Chips
+costMap:
+  Coins:
+    H05: 8000
+    Q05: 5000
+    D05: 5000
+    D05U: 5000
+    D25: 3000
+    D25U: 3000
+    D5: 5000
+    D5U: 5000
+    D8: 8000
+    D8U: 8000
+    G15: 1500
+    G25: 3000
+    G4: 6000
+  Cube:
+    H05: 3
+    H1: 3
+    H2: 6
+    H4: 10
+    D05: 5
+    D05U: 5
+resultColumns:
+  - code
+  - duration
+  - rate
+  - cost-Coins
+  - cost-Cube
+  - gain-BP-SSR
+  - gain-BP-UR
+  - gain-EquipBP-UR
+  - gain-Chips
