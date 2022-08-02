@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="tinygo.js"></script>
+    <style>
+        #log {
+            height: 400px;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Go WASM - TinyGo</h1>
+    <button onclick="Simulate(this)">Simulate</button>
+    <div id="log"></div>
+    <script>
+        const logDom = document.getElementById("log");
+        window.gologfunc = function (text) {
+            logDom.innerText += text + "\n";
+            logDom.scrollTop = logDom.scrollHeight;
+        }
+        const go = new Go();
+        var wasm;
+        go.importObject.env['runtime.buffered'] = () => 0;
+        go.importObject.env['runtime.getchar'] = () => 0;
+        WebAssembly.instantiateStreaming(fetch("neptune-tinygo.wasm"), go.importObject).then((result) => {
+            wasm = result.instance;
+            go.run(wasm);
+        });
+        function Simulate(btn) {
+            btn.disabled = true;
+            // TODO: Use WebWorker (may take several seconds)
+            wasm.exports.Simulate("");
+            btn.disabled = false;
+        }
+    </script>
+</body>
+
+</html>
